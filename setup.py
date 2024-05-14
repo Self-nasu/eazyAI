@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "eazyAI",
-    version = '0.1',
+    version = '1.1.03',
     packages = find_packages(),
     author = 'Puneet Dhankar',
     author_email = "puneetd2005@gmail.com",
@@ -11,6 +11,7 @@ setup(
     install_requires=[
         'numpy',
         'pandas',
-        'matplotlib' 
+        'matplotlib',
+        'tensorflow',
     ],
 )

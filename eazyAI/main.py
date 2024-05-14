@@ -5,6 +5,7 @@ import tensorflow as tf
 import pandas as pd
 import numpy as np
 
+version = "1.1.01"
 
 def just_plot(
         Data, 
@@ -78,3 +79,56 @@ def ezhelp():
     print("List of function")
     print("1. ezhelp()")
     print("2. just_plot()")
+    print("3. gen_data()")
+
+def gen_data(download=False,random=False):
+    print("=" * 67)
+    print("                      DATA SET GENERATOR                      ")
+    print("=" * 67)
+    
+    if random == True:
+        data = pd.DataFrame(
+            {
+                'x': np.random.randint(15,95,size=100),
+                'y': np.random.randint(95,150,size=100)
+            }
+        )
+    else:
+        while True:
+            try:
+                no_of_attrs = int(input("Number of attributes you want: "))
+                no_of_rows = int(input("Number of rows to generate: "))
+                break
+            except ValueError:
+                print("Invalid input. Please enter an integer.")
+
+        data_dict = {}
+
+        for i in range(no_of_attrs):
+            print(f"\n---------- Attribute No. {i + 1} Details ----------\n")
+            name = input("Enter the name of the attribute: ")
+
+            while True:
+                try:
+                    LRange = int(input("Enter lower limit range: "))
+                    URange = int(input("Enter upper limit range: "))
+
+                    if LRange < URange:
+                        break
+                    else:
+                        print("Upper limit must be greater than lower limit. Please try again.")
+                except ValueError:
+                    print("Invalid input. Please enter an integer.")
+
+        data_dict[name] = np.random.randint(LRange, URange, size=no_of_rows)
+
+    data = pd.DataFrame(data_dict)
+    print("\nSuccessfully Generated Your Data.\n")
+    
+    if download == True:
+        name_of_file = input("Enter file name (e.g., 'example.csv'): ")
+    
+        data.to_csv(name_of_file, index=False)
+        print(f"\n{name_of_file} File Saved Successfully.")
+    
+    return data
