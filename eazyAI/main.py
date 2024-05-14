@@ -5,7 +5,6 @@ import tensorflow as tf
 import pandas as pd
 import numpy as np
 
-version = "1.0"
 
 def just_plot(
         Data, 
