@@ -24,7 +24,8 @@ def ezhelp():
     print("List of function")
     print("1. ezhelp()")
     print("2. just_plot_dataframe()")
-    print("3. gen_data()")
+    print("3. just_plot_csv()")
+    print("4. gen_data()")
 
 # ==================================== DATA SET GENREATOR ==================================================
 
