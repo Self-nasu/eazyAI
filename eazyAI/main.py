@@ -5,7 +5,7 @@ import tensorflow as tf
 import pandas as pd
 import numpy as np
 
-version = "1.1.4"
+version = "1.1.5"
 
 # +++++++++++++++++++++++++++++++++++++ MAIN HELP FUNCTION ++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -68,7 +68,7 @@ def gen_data(download=False,random=False):
                 except ValueError:
                     print("Invalid input. Please enter an integer.")
 
-        data_dict[name] = np.random.randint(LRange, URange, size=no_of_rows)
+            data_dict[name] = np.random.randint(LRange, URange, size=no_of_rows)
         data = pd.DataFrame(data_dict)
     
     print("\nSuccessfully Generated Your Data.\n")
