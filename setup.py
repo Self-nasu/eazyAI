@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "eazyAI",
-    version = '1.1.4',
+    version = '1.1.5',
     packages = find_packages(),
     author = 'Puneet Dhankar , Naman Jain',
     author_email = "puneetd2005@gmail.com",
